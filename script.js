@@ -1,4 +1,3 @@
-if (window.location.pathname.includes('index.html')) {
 emailjs.init("EroRhSfyHAcDiFRdF");
 
 document.getElementById("miFormulario").addEventListener("submit", function (event) {
@@ -20,8 +19,6 @@ document.getElementById("miFormulario").addEventListener("submit", function (eve
             alert("Hubo un problema al enviar el mensaje: " + error.text);
         });
 });
-}
-if (window.location.pathname.includes('tabla.html')) {
 function calcularSalario() {
     const salario = prompt("Ingresa el salario:");
     const descuento = prompt("Ingresa el descuento:");
@@ -42,6 +39,4 @@ function calcularPorcentaje() {
     const puntaje = parseFloat(prompt("Ingresa el puntaje:"));
     const porcentaje = puntaje * 0.15;
     alert(`El 15% del puntaje ingresado es: ${porcentaje}`);
-}
-
 }
