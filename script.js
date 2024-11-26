@@ -1,25 +1,23 @@
 if (window.location.pathname.includes('index.html')) {
-emailjs.init('EroRhSfyHAcDiFRdF');
+emailjs.init("EroRhSfyHAcDiFRdF");
 
-document.getElementById('employee-form').addEventListener('submit', function (event) {
-    event.preventDefault();
+document.getElementById("miFormulario").addEventListener("submit", function (event) {
+    event.preventDefault(); 
 
-    const nombre = document.getElementById('nombre').value;
-    const sueldo = document.getElementById('sueldo').value;
-    const mensaje = document.getElementById('mensaje').value;
-
-    const datos = {
-        nombre: nombre,
-        sueldo: sueldo,
-        mensaje: mensaje
+    const templateParams = {
+        nombre: document.getElementById("nombre").value,
+        sueldo: document.getElementById("sueldo").value,
+        mensaje: document.getElementById("mensaje").value,
     };
 
-    emailjs.send('service_0tb3a2z', 'template_itu2gp4', datos)
-        .then(() => {
-            document.getElementById('resultado').textContent = "Mensaje enviado correctamente.";
+    emailjs.send("service_0tb3a2z", "template_itu2gp4", templateParams)
+        .then((response) => {
+            console.log("Correo enviado con éxito", response.status, response.text);
+            alert("Mensaje enviado correctamente.");
         })
-        .catch(() => {
-            document.getElementById('resultado').textContent = "Error al enviar el mensaje.";
+        .catch((error) => {
+            console.error("Error al enviar el correo:", error);
+            alert("Hubo un problema al enviar el mensaje: " + error.text);
         });
 });
 }
