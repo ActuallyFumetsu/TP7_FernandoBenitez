@@ -1,5 +1,5 @@
 if (window.location.pathname.includes('index.html')) {
-emailjs.init('user_EroRhSfyHAcDiFRdF');
+emailjs.init('EroRhSfyHAcDiFRdF');
 
 document.getElementById('employee-form').addEventListener('submit', function (event) {
     event.preventDefault();
