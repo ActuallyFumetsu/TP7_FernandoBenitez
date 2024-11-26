@@ -1,4 +1,4 @@
-if (window.location.pathname.includes('formulario.html')) {
+if (window.location.pathname.includes('index.html')) {
 emailjs.init('hQ7twyONR2TY835fv');
 
 document.getElementById('employee-form').addEventListener('submit', function (event) {
